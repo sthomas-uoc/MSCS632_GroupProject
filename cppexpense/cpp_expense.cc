@@ -245,7 +245,7 @@ private:
       return;
     }
 
-    auto search_type = ReadEnum(kStrSearchTypEnums, " search type");
+    auto search_type = ReadEnum(kStrSearchTypEnums, " search type (date, date_range, category)");
     if (search_type == SearchType::CATEGORY)
     {
       auto category = ReadEnum(kStrExpenseCatEnums, " category");
@@ -370,7 +370,15 @@ public:
 
   void PrintHelp()
   {
-    string help_text = "CppExpense: Expense Tracker";
+    string help_text = R"(CppExpense: Expense Tracker
+
+Commands:
+    exit - Exit CppExpense
+    list - List expenses
+    add - Add expense
+    total - Show expense total
+    search - Search by date / category
+)";
 
     cout << help_text << endl;
   }
